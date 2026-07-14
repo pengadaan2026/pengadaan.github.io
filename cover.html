@@ -1,174 +1,1015 @@
 <!doctype html>
-<html lang="en" class="h-100" data-bs-theme="auto">
+<html lang="en" data-bs-theme="auto">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <meta
-      name="author"
-      content="Bootstrap contributors"
-    />
+    <meta name="author" content="Agus Kurniawan" />
     <meta name="generator" content="Astro v5.13.2" />
-    <title>Bapenda Pengadaan</title>
     <link rel="icon" type="image/png" href="pemprov.png">
+    <title>Pengadaan Bapenda</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <meta name="theme-color" content="#712cf9" />
-    <link href="cover.css" rel="stylesheet" />
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: #0000001a;
-        border: solid rgba(0, 0, 0, 0.15);
-        border-width: 1px 0;
-        box-shadow:
-          inset 0 0.5em 1.5em #0000001a,
-          inset 0 0.125em 0.5em #00000026;
-      }
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-      .bi {
-        vertical-align: -0.125em;
-        fill: currentColor;
-      }
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-      .bd-mode-toggle .bi {
-        width: 1em;
-        height: 1em;
-      }
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-
-      .cover-logo {
-        width: clamp(80px, 10vw, 140px);
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+      .bd-placeholder-img { font-size: 1.125rem; text-anchor: middle; -webkit-user-select: none; -moz-user-select: none; user-select: none; }
+      @media (min-width: 768px) { .bd-placeholder-img-lg { font-size: 3.5rem; } }
+      .bi { vertical-align: -0.125em; fill: currentColor; }
+      .btn-bd-primary { --bd-violet-bg: #712cf9; --bd-violet-rgb: 112.520718, 44.062154, 249.437846; --bs-btn-font-weight: 600; --bs-btn-color: var(--bs-white); --bs-btn-bg: var(--bd-violet-bg); --bs-btn-border-color: var(--bd-violet-bg); --bs-btn-hover-color: var(--bs-white); --bs-btn-hover-bg: #6528e0; --bs-btn-hover-border-color: #6528e0; --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb); --bs-btn-active-color: var(--bs-btn-hover-color); --bs-btn-active-bg: #5a23c8; --bs-btn-active-border-color: #5a23c8; }
+      .bd-mode-toggle { z-index: 1500; }
+      .bd-mode-toggle .bi { width: 1em; height: 1em; }
+      .bd-mode-toggle .dropdown-menu .active .bi { display: block !important; }
+      .pagination-custom .page-item .page-link {
+        border-radius: 0.375rem;
+        margin: 0 2px;
       }
     </style>
   </head>
-  <body class="d-flex h-100 text-center text-bg-dark">
+  <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path
-          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
-        ></path>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path
-          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
-        ></path>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path
-          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
-        ></path>
-        <path
-          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
-        ></path>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path
-          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
-        ></path>
-      </symbol>
+      <symbol id="check2" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path></symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path></symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path></symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path></symbol>
     </svg>
-
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="mb-auto">
-        <div class="d-flex align-items-center">
-          <h5 class="mb-0 me-auto">Bapenda Pengadaan</h5>
-          <nav class="nav nav-masthead ms-auto">
-            <a
-              class="nav-link fw-bold py-1 px-0 active"
-              aria-current="page"
-              href="#"
-              >Home</a
-            >
-            <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
-          </nav>
-        </div>
-      </header>
-      <main class="px-3">
-        <img
-          src="pemprov.png"
-          alt="Logo Pemprov"
-          class="cover-logo mb-3"
-        />
-        <h2>Bapenda Pengadaan</h2>
-        <p class="lead">
-          Cover is a one-page template for building simple and beautiful home
-          pages. Download, edit the text, and add your own fullscreen background
-          photo to make it your own.
-        </p>
-        <p></p>
-        <div class="d-flex gap-3 justify-content-center">
-          <a href="https://docs.google.com/spreadsheets/d/1o6GjCUzy9vYRWqrqPM2pg5sJ7x9mQ6CI2GQotY91JA0/edit?usp=sharing" class="btn btn-lg btn-light fw-bold border-white bg-white">Realisasi</a>
-          <a href="index.html" class="btn btn-lg btn-light fw-bold border-white bg-white">Dokumentasi</a>
-        </div>
-      </main>
-      <footer class="mt-auto text-white-50">
-        <p>
-          Cover template for
-          <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>,
-          by <a href="https://x.com/mdo" class="text-white">@mdo</a>.
-        </p>
-      </footer>
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false"><svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#sun-fill"></use></svg>Light<svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg></button></li>
+        <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false"><svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#moon-stars-fill"></use></svg>Dark<svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg></button></li>
+        <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true"><svg class="bi me-2 opacity-50" aria-hidden="true"><use href="#circle-half"></use></svg>Auto<svg class="bi ms-auto d-none" aria-hidden="true"><use href="#check2"></use></svg></button></li>
+      </ul>
     </div>
-    <script
-      src="../assets/dist/js/bootstrap.bundle.min.js"
-      class="astro-vvvwv3sm"
-    ></script>
+    <header data-bs-theme="dark">
+      <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4>About</h4>
+              <p class="text-body-secondary">Ini merupakan website sederhana untuk mengarsipkan bukti pemeriksaan pekerjaan berupa foto, video, dokumen dan lain sebagainya yang ditautkan langsung ke akun Google Drive Pengadaan Bapenda.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4>Contact Us</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://www.instagram.com/bapendaprovbali/?hl=en" class="text-white"><i class="bi bi-instagram me-1"></i>Instagram</a></li>
+                <li><a href="https://web.facebook.com/bapendaprovbali/?locale=id_ID&_rdc=1&_rdr#" class="text-white"><i class="bi bi-facebook me-1"></i>Facebook</a></li>
+                <li><a href="https://bapenda.baliprov.go.id/" class="text-white"><i class="bi bi-globe me-1"></i>Website</a></li>
+                <li><a href="https://share.google/iR2w5gdHybmvrmelT" class="text-white"><i class="bi bi-controller"></i> Ruang Pengadaan</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <img src="pemprov.png" alt="Logo" width="30" height="30" class="me-2">
+            <strong>Pengadaan Bapenda Provinsi Bali</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Badan Pendapatan Daerah</h1>
+            <h1 class="fw-light">Provinsi Bali</h1>
+            <p class="lead text-body-secondary">Berikut merupakan pekerjaan barang/jasa yang dilaksanakan pada Badan Pendapatan Daerah Provinsi Bali Tahun Anggaran 2026 :</p>
+            
+            <p>
+              <div class="input-group mb-3">
+                <input type="text" id="searchInput" class="form-control" placeholder="Cari pekerjaan..." aria-label="Cari pekerjaan">
+                <button class="btn btn-primary" type="button" id="searchButton"><i class="bi bi-search"></i> Cari</button>
+              </div>
+            </p>
+            <p>
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="cardsContainer">
+            <!-- Cards from page 1 -->
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Pengadaan Barang Cetakan Surat Setoran Pajak Daerah (SSPD).</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1J9D7h4EFnVdaoOnhk69Srz2K6QB_6d3l?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Pengadaan Alat/Bahan Kebersihan.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1IVEsCxGy4OwY4Lb955dFK8XvztRg97Q0?usp=sharings" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Pengisian Tabung Pemadam.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1vCeju4ZDxylVkqo4lTFJ7fEo3NPxniuA?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan Tablet Android.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1soeJnjzRMrWGpxi-uhHA-WJ5xz7bE1DB?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Pengadaan AC 1 PK.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1NKwfHA8tKhwFra0QaQOwSteZbGpZ8hNX?usp=sharing" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan AC 2 PK.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1uHMSPfaqco5-qJMN9pZGvtwUJ4Tto46k?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan HDD dan SSD Eksternal.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1MaNIj9jUGcX5kurWtbc3oyidirzSIuzM?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan Komputer (Administrasi) .</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1Kys0t8EXeoL7FYjlzc8fCBH1D-S8I0sC?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="1">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan Komputer (Grafis/High End).</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1V78_vY9FC0eWQX2D0JWVlFGMxM6gIsz2?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards from page 2 -->
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan Laptop/Notebook (Administrasi)</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1IzUxK9QaAkM6xXID1rIUUis8evGGv7yD?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Pengadaan Map Kop dan Buku Persediaan dan Pemeliharaan Barang.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1--9bKav5O4u9UHlWrL9ydM_28OGUDNjM?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan Printer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1yD5XA0sLv1RGgZHPHPkqfZADNTS6ZwD-?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan Rak Besi Arsip.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1Tsb1cf--i5nRZeJrHOA43c6kEw1rZgkK?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Modal Pengadaan Scanner.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1M_UJqFqTbLC5JQoyy3LKnGLpSH3WDH2K?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Perencanaan Spesifikasi: Gedung Arsip pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Karangasem.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1j6gWyO2EaaRb9GNaxIcKiwOsVCxHsYsj?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Perencanaan Spesifikasi: Toilet Dissabilitas pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Bangli.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1ZspuSZozZwS89m7ZLXvEIQRhr-4Ft_Kx?usp=sharing" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Perencanaan Spesifikasi: Jasa Perencanaan Garase Kendaraan pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1DVDvKyMmrmWaiAxf0Qs8Qiy0I-w4lWLv?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="2">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Perencanaan Kanopi pada Samsat Drive Thru Batubulan UPTD Pelayanan Pajak danRetribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1ENYBCZYoEp4TAmonoEJjvNsSQa0XAJ15?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards from page 3 -->
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Perencanaan Pembangunan Fisik Lanjutan Pemeliharaan Tembok Penyengker pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Bangli.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1mkyGIPUUD7NgTdZ-jx3gYZnE5yV_qHGC?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text"> Jasa Perencanaan Modal Instalasi Genset pada UPTD Pelayanan Pajak dan Retribusi DaerahProvinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1XVFDsNESsjyZ_VOM9KAwX0zsdgU_4K6w?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text"> Jasa Perencanaan Rehabilitasi Atap Gedung Kantor pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Buleleng.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/19G0jURl3JBY4d-1U8WUh36OJ_JPJKi9m?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Perencanaan Rehabilitasi Ruang Rapat pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Tabanan.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1KdezJ_mOVQ-Rr5a22KJwQHHQdqUx316l?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="perencanaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Perencanaan Renovasi Gedung Drive Thru pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Klungkung.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/15xcPa72OUTxC9yg--jsCepsezakoY6wj?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Pintu Gerbang pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Buleleng.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1ug_3NiX4D5hbFVLaTjnXi8mfFNXg1C1-?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Kantor Bangunan Gedung Tempat Kerja Spesifikasi: Pintu Gerbang pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/17GlH66Lb_fGJEpIw5n9XkUY7Z3CO6JEZ?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Bangunan Gedung Tempat Kerja Spesifikasi: Pintu Gerbang pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Klungkung.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1XfnhcT-eMZl2F936etl_cGcCdXk_q0rr?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="3">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text"> Bangunan Gedung Tempat Kerja Spesifikasi: Pintu Gerbang pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Tabanan.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1-zYuyyyD8sfoL_dmWAZZztgiv9X8tUu5?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards from page 4 -->
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Kanopi pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Badung.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1jrXDjJgqXOANvBnfc4uBtkfUGXVankiC?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Kanopi pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Jembrana.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1020cNJNer43nXfZIPK0LNl6qXGCUeBdU?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Modal Gedung Arsip pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Karangasem.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1mAy4iKkbsDQpImty-NkjGvmZcL7yIsWK?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Modal Toilet Dissabilitas pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Bangli.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1q46y960wanDAB9RVXiiVel7pKzg0FLqA?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Modal Garase Kendaraan pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali diKabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/19ODSaXZPzwJcFqmGB0EiWZ7L6wrlaaxs?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Terbuka Spesifikasi: Pembangunan Kanopi pada Samsat Drive Thru Batubulan UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1jI8yVu9V7ZzC_rxiSYiFytYA6G-tvzmY?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text"> Pembangunan Fisik Lanjutan Pemeliharaan Tembok Penyengker pada UPTD Pelayanan Pajakdan Retribusi Daerah Provinsi Bali di Kabupaten Bangli.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1LxU_F364Ikxbj7B-SljJX8lofGm1Sa3U?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="fisik.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jaringan Instalasi Listrik Spesifikasi: Instalasi Genset pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1u086LvROkb-WIgqPgARMgGXTaEdjOWbY?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="4">
+              <div class="card shadow-sm">
+                <img src="pemeliharaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Pemeliharaan Gedung dan Bangunan Spesifikasi: Pemeliharaan Bangunan Gedung Kantor pada Badan Pendapatan Daerah Provinsi Bali.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1jb4RTKYNXH4mKjmH6QU4KdtDQyDuc_YP?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards from page 5 -->
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pemeliharaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Rehabilitasi Atap Gedung Kantor pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Buleleng.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/12VYAQhz5PU9-vofY2CHhISrc6om6pOL-?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pemeliharaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Rehabilitasi Ruang Rapat pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Tabanan.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1RaH-Klq6jgPZJdePsITZcFrAc8KW-8-Q?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pemeliharaan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Gedung Tempat Kerja Spesifikasi: Renovasi Gedung Drive Thru pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Klungkung.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1TI6qec80f-L3rXS4z-v7mwjWHrWnlWxG?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Pengawasan Spesifikasi: Gedung Arsip pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Karangasem.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1EsNlAeNpDgmyLyUrU5fU6X-VJFSvscl3?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Pengawasan Spesifikasi: Toilet Dissabilitas pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Bangli.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1EsHYL9DsoSD-Pl1ER-11h6Y7TnWQyLrF?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Pengawasan Spesifikasi: Jasa Pengawasan Garase Kendaraan pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1UgEhZNTPt_gbnZF2OLVbvK2dGBrJfsnj?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Bangunan Terbuka Spesifikasi: Jasa Pengawasan Kanopi pada Samsat Drive Thru Batubulan UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1PXteiEzoCbqvjOSb9Bok1LVbci-zqCjr?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Pengawasan Pembangunan Fisik Lanjutan Pemeliharaan Tembok Penyengker pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Bangli.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1J9D7h4EFnVdaoOnhk69Srz2K6QB_6d3l?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="5">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jaringan Listrik Spesifikasi: Jasa Pengawasan Modal Instalasi Genset pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Gianyar.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1bojoX9Cv3wtUxwDeYDjISHj2f-JFH1em?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards from page 6 -->
+            <div class="col" data-page="6">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text"> Jasa Pengawasan Spesifikasi: Jasa Pengawasan Rehabilitasi Atap Gedung Kantor pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Buleleng.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1MhTAYmh7eHNNX3RaUQw-Zse_EXoJ9DHh?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="6">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Pengawasan Spesifikasi: Jasa Pengawasan Rehabilitasi Ruang Rapat pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Tabanan.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1iB7jMrIValFAxdO3QcNSiLNm2ZUiCQ9F?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col" data-page="6">
+              <div class="card shadow-sm">
+                <img src="pengawasan.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Jasa Pengawasan Spesifikasi: Jasa Pengawasan Renovasi Gedung Drive Thru pada UPTD Pelayanan Pajak dan Retribusi Daerah Provinsi Bali di Kabupaten Klungkung.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1cYl7nF76s4cKYijBdWts1inJiaPw5hJa?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <div class="col" data-page="6">
+              <div class="card shadow-sm">
+                <img src="barang.png" class="bd-placeholder-img card-img-top" height="225" alt="Thumbnail" style="object-fit: cover; width: 100%;">
+                <div class="card-body">
+                  <p class="card-text">Belanja Pengadaan Alat/Bahan Taman.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://drive.google.com/drive/folders/1EcYa0GU2x652xCwbzJ9OB8BAt1SD7Jva?usp=drive_link" target="_blank" class="btn btn-sm btn-outline-secondary">Tambahkan Foto</a>
+                    </div>
+                    <small class="text-body-secondary">2026</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+                </div>
+              </div>
+            </div>
+            
+                </div>
+              </div>
+            </div>
+            
+                </div>
+              </div>
+            </div>
+            
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pagination -->
+          <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center pagination-custom" id="pagination">
+            </ul>
+          </nav>
+          
+          <!-- Info text -->
+          <p class="text-center text-muted mt-3" id="pageInfo"></p>
+        </div>
+      </div>
+    </main>
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1"><a href="#">Back to top</a></p>
+        <p class="mb-0">Copyright &copy; 2026</p>
+      </div>
+    </footer>
+    <script>
+      // Theme toggle functionality
+      (() => {
+        'use strict'
+        const getStoredTheme = () => localStorage.getItem('theme')
+        const setStoredTheme = theme => localStorage.setItem('theme', theme)
+        const getPreferredTheme = () => {
+          const storedTheme = getStoredTheme()
+          if (storedTheme) return storedTheme
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        const setTheme = theme => {
+          if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-bs-theme', 'dark')
+          } else {
+            document.documentElement.setAttribute('data-bs-theme', theme)
+          }
+        }
+        setTheme(getPreferredTheme())
+        const showActiveTheme = (theme, focus = false) => {
+          const themeSwitcher = document.querySelector('#bd-theme')
+          const themeSwitcherText = document.querySelector('#bd-theme-text')
+          const activeThemeIcon = document.querySelector('.theme-icon-active')
+          const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+          const svgOfActiveBtn = btnToActive.querySelector('.bi').getAttribute('href')
+          document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+            element.classList.remove('active')
+            element.setAttribute('aria-pressed', 'false')
+          })
+          btnToActive.classList.add('active')
+          btnToActive.setAttribute('aria-pressed', 'true')
+          activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+          const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.textContent})`
+          themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
+          if (focus) themeSwitcher.focus()
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+          const storedTheme = getStoredTheme()
+          if (storedTheme !== 'light' && storedTheme !== 'dark') setTheme(getPreferredTheme())
+        })
+        window.addEventListener('DOMContentLoaded', () => {
+          showActiveTheme(getPreferredTheme())
+          document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const theme = toggle.getAttribute('data-bs-theme-value')
+              setStoredTheme(theme)
+              setTheme(theme)
+              showActiveTheme(theme, true)
+            })
+          })
+        })
+      })();
+    </script>
+    <script>
+      // Pagination and Search functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const cardsContainer = document.getElementById('cardsContainer');
+        const cards = Array.from(document.querySelectorAll('.col'));
+        const pagination = document.getElementById('pagination');
+        const pageInfo = document.getElementById('pageInfo');
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        
+        const cardsPerPage = 9;
+        let currentPage = 1;
+        let filteredCards = [];
+        
+        // Initialize filtered cards with all cards
+        filteredCards = [...cards];
+        
+        // Get total pages
+        function getTotalPages() {
+          return Math.ceil(filteredCards.length / cardsPerPage);
+        }
+        
+        // Show cards for current page
+        function showPage(page) {
+          currentPage = page;
+          const start = (page - 1) * cardsPerPage;
+          const end = start + cardsPerPage;
+          
+          // Hide all cards first
+          cards.forEach(card => {
+            card.style.display = 'none';
+          });
+          
+          // Show only cards for current page (that match search)
+          const pageCards = filteredCards.slice(start, end);
+          pageCards.forEach(card => {
+            card.style.display = '';
+          });
+          
+          // Update page info
+          if (filteredCards.length > 0) {
+            pageInfo.textContent = `Menampilkan ${start + 1}-${Math.min(end, filteredCards.length)} dari ${filteredCards.length} item`;
+          } else {
+            pageInfo.textContent = 'Tidak ada hasil pencarian';
+          }
+          
+          // Update pagination buttons
+          renderPagination();
+        }
+        
+        // Render pagination buttons
+        function renderPagination() {
+          const totalPages = getTotalPages();
+          let paginationHTML = '';
+          
+          // Previous button
+          paginationHTML += `
+            <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+              <a class="page-link" href="#" onclick="event.preventDefault(); changePage(${currentPage - 1})">Sebelumnya</a>
+            </li>
+          `;
+          
+          // Page numbers
+          for (let i = 1; i <= totalPages; i++) {
+            paginationHTML += `
+              <li class="page-item ${currentPage === i ? 'active' : ''}">
+                <a class="page-link" href="#" onclick="event.preventDefault(); changePage(${i})">${i}</a>
+              </li>
+            `;
+          }
+          
+          // Next button
+          paginationHTML += `
+            <li class="page-item ${currentPage === totalPages || totalPages === 0 ? 'disabled' : ''}">
+              <a class="page-link" href="#" onclick="event.preventDefault(); changePage(${currentPage + 1})">Selanjutnya</a>
+            </li>
+          `;
+          
+          pagination.innerHTML = paginationHTML;
+        }
+        
+        // Change page function
+        window.changePage = function(page) {
+          const totalPages = getTotalPages();
+          if (page >= 1 && page <= totalPages) {
+            showPage(page);
+            // Scroll to top of cards
+            document.querySelector('.album').scrollIntoView({ behavior: 'smooth' });
+          }
+        };
+        
+        // Filter cards based on search
+        function filterCards() {
+          const searchTerm = searchInput.value.toLowerCase().trim();
+          
+          if (searchTerm === '') {
+            filteredCards = [...cards];
+          } else {
+            filteredCards = cards.filter(card => {
+              const cardText = card.querySelector('.card-text');
+              if (cardText) {
+                return cardText.textContent.toLowerCase().includes(searchTerm);
+              }
+              return false;
+            });
+          }
+          
+          // Reset to page 1 and show results
+          showPage(1);
+        }
+        
+        // Event listeners for search
+        searchButton.addEventListener('click', filterCards);
+        searchInput.addEventListener('keypress', function(e) { 
+          if (e.key === 'Enter') {
+            filterCards();
+          }
+        });
+        
+        // Check for search parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchParam = urlParams.get('search');
+        if (searchParam) {
+          searchInput.value = searchParam;
+          filterCards();
+        } else {
+          // Initial page load - show first page
+          showPage(1);
+        }
+      });
+    </script>
   </body>
 </html>
+
