@@ -49,3 +49,7 @@ body {
   border-bottom-color: #fff;
 }
 
+main {
+  position: relative;
+  top: 40px; /* Gunakan angka positif. Semakin besar angkanya, akan semakin ke bawah */
+}
