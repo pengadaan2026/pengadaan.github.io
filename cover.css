@@ -48,3 +48,8 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+main {
+  position: relative;
+  top: -60px; /* Silakan ubah angka ini. Semakin besar angkanya (misal -60px), akan semakin ke atas */
+}
