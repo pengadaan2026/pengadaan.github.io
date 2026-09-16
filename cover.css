@@ -49,7 +49,3 @@ body {
   border-bottom-color: #fff;
 }
 
-main {
-  position: relative;
-  top: -68px; /* Silakan ubah angka ini. Semakin besar angkanya (misal -60px), akan semakin ke atas */
-}
