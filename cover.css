@@ -51,5 +51,5 @@ body {
 
 main {
   position: relative;
-  top: -10px; /* Gunakan angka positif. Semakin besar angkanya, akan semakin ke bawah */
+  top: -25px; /* Gunakan angka positif. Semakin besar angkanya, akan semakin ke bawah */
 }
